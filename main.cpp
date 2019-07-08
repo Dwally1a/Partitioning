@@ -8,6 +8,7 @@
 #include "TiledWorldGenerator.h"
 #include <chrono>
 #include <string>
+#include <vector>
 
 using namespace std;
 using namespace std::chrono;
@@ -22,6 +23,7 @@ static void error_callback(int error, const char* description)
 int main(int, char**)
 {
     TiledWorldGenerator worldGen;
+
 
     // Setup window
     glfwSetErrorCallback(error_callback);

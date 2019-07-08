@@ -3,6 +3,7 @@
 #include "imgui_internal.h"
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 const float WindowBuffer = 5.0f;
 const float CellBorder = 1.0f;
@@ -59,8 +60,16 @@ void TiledWorldGenerator::CalculateField()
 {
 	largestFieldStrength = 0;
 
-	// TODO: build tree here
+	AABBf worldBounds = AABBf(Vector2f::Zero, Vector2f(Length, Width));
 
+	// TODO: build tree here
+	Node* rootNode = new Node(worldBounds.boxMin, worldBounds.boxMax, nullptr, 0);
+
+	for (auto tile : world)
+	{
+		rootNode->AddObject(tile);
+	}
+	
 	// iterate over the tiles and calculate their field
 	for (Tile* currentTilePtr : world)
 	{
@@ -209,4 +218,7 @@ void TiledWorldGenerator::GenerateWorld()
 									 referenceTilePtr->FieldStrength, referenceTilePtr->FieldRange));
 		}
 	}
+
+	
 }
+

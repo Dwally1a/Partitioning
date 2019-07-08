@@ -21,13 +21,14 @@ class Tile
         Vector2f Location;
         float FieldStrength;
         float FieldRange;
+		AABBf bounds;
 
         Vector2f LocalFieldValue;
 
         Tile(TileType _type, const ImColor& _colour, const Vector2f& _location, float _fieldStrength, float _fieldRange) :
             Type(_type), Colour(_colour), Location(_location), FieldStrength(_fieldStrength), FieldRange(_fieldRange)
         {
-
+			bounds = AABBf(_location + Vector2f(_fieldRange * -1, _fieldRange * -1), _location + Vector2f(_fieldRange, _fieldRange));
         }
 
         Vector2f CalculateFieldTo(Tile* otherTile)

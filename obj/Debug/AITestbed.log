@@ -1,1 +1,21 @@
-﻿
+﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Node.cpp
+c:\users\bmooney\documents\partitioning\node.cpp(24): error C2276: '*': illegal operation on bound member function expression
+c:\users\bmooney\documents\partitioning\node.cpp(38): error C3867: 'std::vector<Tile *,std::allocator<_Ty>>::size': non-standard syntax; use '&' to create a pointer to member
+          with
+          [
+              _Ty=Tile *
+          ]
+c:\users\bmooney\documents\partitioning\node.cpp(38): error C2446: '>': no conversion from 'int' to 'unsigned int (__thiscall std::vector<Tile *,std::allocator<_Ty>>::* )(void) noexcept const'
+          with
+          [
+              _Ty=Tile *
+          ]
+  c:\users\bmooney\documents\partitioning\node.cpp(38): note: There are no conversions from integral values to pointer-to-member values
+c:\users\bmooney\documents\partitioning\node.cpp(58): warning C4457: declaration of 'tile' hides function parameter
+  c:\users\bmooney\documents\partitioning\node.cpp(22): note: see declaration of 'tile'
+c:\users\bmooney\documents\partitioning\node.cpp(77): error C3867: 'std::vector<Node *,std::allocator<_Ty>>::size': non-standard syntax; use '&' to create a pointer to member
+          with
+          [
+              _Ty=Node *
+          ]

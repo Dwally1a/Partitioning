@@ -214,11 +214,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Node.h" />
     <ClInclude Include="TiledWorldGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
     </ClCompile>
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="TiledWorldGenerator.cpp">
     </ClCompile>
     <ClCompile Include="Tile.cpp">
