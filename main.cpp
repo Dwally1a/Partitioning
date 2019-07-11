@@ -99,6 +99,19 @@ int main(int, char**)
         ImGui::Checkbox("Show field", &(worldGen.ShowField));
 
         ImGui::Text("Time: %lld microseconds", lastElapsedTime);
+
+		if (ImGui::Button("Search 10, 10 nodes"))
+		{
+			std::vector<Tile*> tempList = worldGen.ReturnSelectedNode(Vector2f(10, 10));
+
+			for (auto _tile : tempList)
+			{
+				std::cout << _tile->Location.X << "," << _tile->Location.Y << " : ";
+			}
+
+			std::cout << "CHeck tiles" << 
+			worldGen.ReturnSelectedNode(Vector2f(10, 10)).size();
+		}
         
         ImGui::End();
 

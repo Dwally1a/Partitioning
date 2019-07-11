@@ -20,7 +20,7 @@ class Tile
         ImColor Colour;
         Vector2f Location;
         float FieldStrength;
-        float FieldRange;
+        float FieldRange = 0;
 		AABBf bounds;
 
         Vector2f LocalFieldValue;

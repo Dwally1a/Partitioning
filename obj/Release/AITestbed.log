@@ -1,9 +1,7 @@
-﻿  main.cpp
-  TiledWorldGenerator.cpp
-  Tile.cpp
-  imgui_impl_glfw.cpp
-  imgui.cpp
-  imgui_draw.cpp
-  imgui_demo.cpp
-  Generating Code...
-  AITestbed.vcxproj -> C:\Users\imcmanus\Downloads\AITestbed\.\AITestbed.exe
+﻿  TiledWorldGenerator.cpp
+c:\users\bmooney\documents\partitioning\tiledworldgenerator.cpp(63): warning C4244: 'argument': conversion from 'int' to 'CoordinateType', possible loss of data
+          with
+          [
+              CoordinateType=float
+          ]
+  AITestbed.vcxproj -> C:\Users\bmooney\Documents\Partitioning\.\AITestbed.exe

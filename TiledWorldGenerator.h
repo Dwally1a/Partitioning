@@ -16,6 +16,7 @@ class AvailableTile
         TileType Type;
         float FieldStrength;
         float FieldRange;
+		
 
         AvailableTile(int _frequency, const std::string& _name, const ImColor& _colour, TileType _type, float _fieldStrength, float _fieldRange) :
             Frequency(_frequency), Name(_name), Colour(_colour), Type(_type), FieldStrength(_fieldStrength), FieldRange(_fieldRange)
@@ -30,6 +31,7 @@ class TiledWorldGenerator
         int Length;
         int Width;
         std::vector<AvailableTile*> TilePalette;
+		Node *rootNode;
 
         TiledWorldGenerator() :
             Length(120), Width(120)
@@ -57,6 +59,8 @@ class TiledWorldGenerator
         void CalculateField();
 
         void DrawWorld();
+
+		std::vector<Tile*> ReturnSelectedNode(Vector2f);
 
     protected:
 	    void NormaliseProbabilities();

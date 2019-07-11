@@ -63,7 +63,7 @@ void TiledWorldGenerator::CalculateField()
 	AABBf worldBounds = AABBf(Vector2f::Zero, Vector2f(Length, Width));
 
 	// TODO: build tree here
-	Node* rootNode = new Node(worldBounds.boxMin, worldBounds.boxMax, nullptr, 0);
+	rootNode = new Node(worldBounds.boxMin, worldBounds.boxMax, nullptr, 0);
 
 	for (auto tile : world)
 	{
@@ -87,7 +87,9 @@ void TiledWorldGenerator::CalculateField()
 		// TODO: "world" below changes to result we get back from asking for relevant tiles
 
 		// iterate over every other tile and add their contribution to the field
-		for(Tile* otherTilePtr : world)
+
+		//for(Tile* otherTilePtr : world)
+		for (Tile* otherTilePtr : rootNode->FindTiles(currentTilePtr->Location))
 		{
 			// skip this tile
 			if (otherTilePtr == currentTilePtr)
@@ -220,5 +222,10 @@ void TiledWorldGenerator::GenerateWorld()
 	}
 
 	
+}
+
+std::vector<Tile*> TiledWorldGenerator::ReturnSelectedNode(Vector2f _target)
+{
+	return rootNode->FindTiles(_target);
 }
 

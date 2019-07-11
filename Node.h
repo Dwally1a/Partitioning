@@ -9,8 +9,9 @@ public:
 	std::vector<Node*> children;
 	Node* parent;
 	std::vector<Tile*> contents;
-	int depth;
+	unsigned depth;
 	AABBf boundingBox;
+	float minNodeWidth = 1;
 
 	Node();
 	Node(Vector2f, Vector2f, Node*, int);
@@ -20,9 +21,7 @@ public:
 	std::vector<Tile*> FindTiles(Vector2f);
 
 protected:
-	int objectsPerNode = 5;
-
-
+	unsigned objectsPerNode = 5;
 	
 };
 
